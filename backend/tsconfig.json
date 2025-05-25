@@ -8,12 +8,15 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./",
     "paths": {
-      "@controllers/*": ["./src/controllers/*"],
-      "@models/*": ["./src/models/*"],
-      "@routes/*": ["./src/routes/*"],
-      "@lib/*": ["./src/lib/*"],
-      "@/*": ["./src/*"]
+      "@controllers/*": ["src/controllers/*"],
+      "@models/*": ["src/models/*"],
+      "@routes/*": ["src/routes/*"],
+      "@lib/*": ["src/lib/*"],
+      "@dto/*": ["src/dto/*"],
+      "@middleware/*": ["src/middleware/*"],
+      "@/*": ["src/*"]
     }
   },
   "include": ["src/**/*"],

@@ -1,15 +1,17 @@
-import 'module-alias/register';
-
 import { connectDB } from '@lib/db';
+import authRoutes from '@routes/auth.route';
+import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import express from 'express';
 
-import authRoutes from './routes/auth.route';
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-dotenv.config();
+app.use(express.json());
+app.use(cookieParser());
+
 app.use('/api/auth', authRoutes);
 
 app.listen(PORT, () => {

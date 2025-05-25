@@ -4,17 +4,10 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/server.js",
-    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' -r tsconfig-paths/register src/server.ts",
+    "start": "node -r ts-node/register -r tsconfig-paths/register dist/server.js",
+    "dev": "tsx watch --env-file=.env src/server.ts",
     "lint": "eslint 'src/**/*.ts'",
     "fix": "eslint 'src/**/*.ts' --fix"
-  },
-  "_moduleAliases": {
-    "@controllers/*": "./src/controllers/*",
-    "@models/*": "./src/models/*",
-    "@routes/*": "./src/routes/*",
-    "@lib/*": "./src/lib/*",
-    "@/*": "./src/*"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
@@ -23,21 +16,24 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.16.0",
     "mongoose": "^8.15.0",
-    "socket.io": "^4.8.1"
+    "socket.io": "^4.8.1",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.27.0",
+    "@types/cookie-parser": "^1.4.8",
     "@types/express": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/module-alias": "^2.0.4",
     "@types/node": "^22.15.21",
     "eslint": "^9.27.0",
     "eslint-define-config": "^2.1.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "globals": "^16.1.0",
-    "module-alias": "^2.2.3",
-    "nodemon": "^3.1.10",
-    "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.19.4",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.32.1"
   }
